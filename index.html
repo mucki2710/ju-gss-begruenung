@@ -33,6 +33,45 @@
 
     .wrap { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
 
+
+    .topbar {
+      background: #143f31;
+      border-top: 2px solid #58d2df;
+      color: #fff;
+    }
+    .topbar-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .school-brand, .award-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 700;
+      font-size: .94rem;
+      white-space: nowrap;
+    }
+    .gss-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: #dcecc4;
+      color: #173d2d;
+      font-weight: 900;
+      font-size: .82rem;
+      letter-spacing: -.02em;
+    }
+    .award-brand { font-weight: 500; }
+    .award-year {
+      color: #f2a65a;
+      font-weight: 800;
+      letter-spacing: .03em;
+    }
+
     header {
       padding: 64px 0 42px;
       border-bottom: 1px solid var(--line);
@@ -191,6 +230,9 @@
     }
 
     @media (max-width: 760px) {
+      .topbar-inner { min-height: 58px; gap: 14px; }
+      .gss-mark { width: 36px; height: 36px; }
+      .school-brand, .award-brand { font-size: .86rem; }
       header { padding-top: 42px; }
       .wrap { width: min(100% - 24px, 1180px); }
       .place-head { padding: 18px 18px 15px; }
@@ -206,6 +248,18 @@
   </style>
 </head>
 <body>
+  <nav class="topbar" aria-label="Projektkopf">
+    <div class="wrap topbar-inner">
+      <div class="school-brand" aria-label="GSS Tübingen">
+        <span class="gss-mark" aria-hidden="true">GSS</span>
+        <span>Tübingen</span>
+      </div>
+      <div class="award-brand">
+        <span>Umweltpreis</span>
+        <span class="award-year">2026</span>
+      </div>
+    </div>
+  </nav>
   <header>
     <div class="wrap">
       <span class="eyebrow">GSS · Ideen für das Schulgelände</span>
